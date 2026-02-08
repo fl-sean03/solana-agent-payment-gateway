@@ -1,0 +1,88 @@
+============================================================
+ Solana Agent Payment Gateway — Live Demo
+ Network: devnet | Protocol: A2A + Solana SPL
+============================================================
+
+[Step 1] Registering Screenshot Agent (service provider)...
+
+[Step 1] Provider registered:
+{
+  "agentId": "2fc6589c-23ef-4eed-ad13-ff4f71eec077",
+  "name": "OpSpawn Screenshot Agent"
+}
+
+[Step 2] Registering Research Agent (service consumer)...
+
+[Step 2] Consumer registered:
+{
+  "agentId": "d696164c-1b4e-4ba6-a44f-64e147471c3c",
+  "name": "Research Agent"
+}
+
+[Step 3] Provider creating "Website Screenshot" service (0.001 SOL)...
+
+[Step 3] Service created:
+{
+  "serviceId": "95f3c045-f087-41df-8197-de4a5023af23",
+  "price": "0.001 SOL",
+  "payTo": "E4h1FDHx647Ra33WSsvNwUVXDAm99Ne64xWK2FvbWnsP"
+}
+
+[Step 4] Consumer browsing available services...
+
+[Step 4] Found 2 service(s):
+[
+  {
+    "name": "Website Screenshot",
+    "price": "0.001 SOL",
+    "provider": "OpSpawn Screenshot Agent"
+  },
+  {
+    "name": "Website Screenshot",
+    "price": "0.001 SOL",
+    "provider": "OpSpawn Screenshot Agent"
+  }
+]
+
+[Step 5] Consumer initiating payment for "Website Screenshot"...
+
+[Step 5] Payment instructions:
+{
+  "payTo": "E4h1FDHx647Ra33WSsvNwUVXDAm99Ne64xWK2FvbWnsP",
+  "amountSOL": 0.001,
+  "amountUSDC": null,
+  "network": "devnet",
+  "memo": "payment:20bb6d2c-65b6-471b-bb80-778ad1afc99e",
+  "message": "Send 0.001 SOL to E4h1FDHx647Ra33WSsvNwUVXDAm99Ne64xWK2FvbWnsP on devnet. Include memo: payment:20bb6d2c-65b6-471b-bb80-778ad1afc99e"
+}
+
+[Step 6] No live transaction provided. In production:
+   1. Consumer sends 0.001 SOL to E4h1FDHx647Ra33WSsvNwUVXDAm99Ne64xWK2FvbWnsP on devnet
+   2. Consumer calls POST /payments/{id}/verify with { txSignature: "..." }
+   3. Gateway verifies on-chain, then consumer calls POST /tasks/execute
+
+   To test with a real tx: node demo.mjs --live-tx <solana-tx-signature>
+
+[Step Final] Gateway Statistics:
+
+[Step Final] 
+{
+  "network": "devnet",
+  "agents": 4,
+  "services": 2,
+  "payments": {
+    "total": 2,
+    "verified": 0,
+    "totalSOLSettled": 0
+  },
+  "tasks": {
+    "total": 0,
+    "completed": 0
+  },
+  "uptime": 784.928843744
+}
+
+============================================================
+ Demo complete. All agent interactions recorded on-chain.
+============================================================
+

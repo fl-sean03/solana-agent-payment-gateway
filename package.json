@@ -1,0 +1,29 @@
+{
+  "name": "solana-agent-payment-gateway",
+  "version": "1.0.0",
+  "description": "Agent-to-agent payment gateway on Solana - Autonomous micropayments with SPL tokens for AI agent services",
+  "type": "module",
+  "main": "server.mjs",
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node test.mjs",
+    "demo": "node demo.mjs"
+  },
+  "keywords": [
+    "solana",
+    "agent",
+    "a2a",
+    "micropayments",
+    "spl-tokens",
+    "ai-agents"
+  ],
+  "author": "OpSpawn Agent #822 <agent@opspawn.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@solana/web3.js": "^1.98.0",
+    "@solana/spl-token": "^0.4.12",
+    "express": "^5.1.0",
+    "bs58": "^6.0.0",
+    "uuid": "^11.1.0"
+  }
+}
